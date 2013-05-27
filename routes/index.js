@@ -3,7 +3,7 @@ var Website = require('../models/website.js');
 var Target = require('../models/target.js');
 
 // ADD USER NAME AND OAUTH TOKEN
-//var client = require('twilio')('', '');
+var client = require('twilio')('AC74d28e73883affa3b70c0f884a0142ec', 'ea4b7bd9285aa53913b32924feed8bce');
 
 
 
@@ -54,8 +54,8 @@ exports.addSite = function(req, res){
     website.save(function(err){
         if(err)
             return console.log("error saving" + website.name);
-        res.send('You\'ve added ' + req.body.name + ' with the url: ' + req.body.url + '!');
-        return res.redirect('/dev');
+        var message = ('You\'ve added ' + req.body.name + ' with the url: ' + req.body.url + '!');
+        res.render('index', { title: message });
     });
 };
 
@@ -82,7 +82,8 @@ function sendText(message, site, res){
 
             console.log(responseData.from); // outputs "+12242655660"
             console.log(responseData.body); // outputs "hey darlin"
-            res.send("Your message to Dev: " + "Ok see this: " + site.name + " - " + site.url);
+            var message = ("Your message to Dev: " + "Ok see this: " + site.name + " - " + site.url);
+            res.render('index', { title: message });
         }
     });
 

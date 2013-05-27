@@ -9,6 +9,5 @@
     "express": "3.0.6",
     "jade": "*",
     "mongoose": "3.x"
-
   }
 }
