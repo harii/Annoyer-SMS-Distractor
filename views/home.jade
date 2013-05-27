@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1=title
+
+    h4 Distract button
+        form(action="/dev/distract", method="post")
+            input(type="submit", id="distract", value="send SMS with URL")
+
+
+    h4 Add new url: Name / URL
+        form(action="/dev/new", method="post")
+            input(type="text", name="name")
+            input(type="text", name="url")
+            input(type="submit", id="newURL", value="add new url")
+
