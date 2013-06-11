@@ -3,7 +3,7 @@ var Website = require('../models/website.js');
 var Target = require('../models/target.js');
 
 // ADD USER NAME AND OAUTH TOKEN
-var client = require('twilio')('AC74d28e73883affa3b70c0f884a0142ec', 'ea4b7bd9285aa53913b32924feed8bce');
+var client = require('twilio')('', '');
 
 
 
